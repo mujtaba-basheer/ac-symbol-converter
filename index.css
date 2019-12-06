@@ -1,0 +1,18 @@
+.form-control {
+    width: 100px;
+    display: inline-block;
+}
+
+#ans {
+    background-color: aquamarine;
+}
+
+#j {
+    font-size: 25px;
+}
+
+.container-fluid {
+    width: 75%;
+    border: 1px solid black;
+    margin-top: 15px;
+}

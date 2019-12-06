@@ -1,0 +1,68 @@
+<html>
+    <head>
+        <title>RLC Form Converter</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <link rel="stylesheet" href="index.css">
+    </head>
+
+    <body>
+        <div class="container-fluid">
+            <h1>Form Converter</h1>
+            <hr>
+            <h2>Symbolic to j-operator</h2>
+            <br>
+            <form>
+                <div class="form-group" id="conv1">
+                  <label for="exampleInputEmail1">Value</label>
+                  <input v-model="value" type="number" class="form-control" placeholder="Value">
+
+                  &nbsp; &nbsp; &nbsp;
+
+                  <label for="exampleInputEmail1">Angle</label>
+                  <input v-model="angle" type="number" class="form-control" placeholder="Angle"> &#176;
+
+                  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+
+                  <button type="submit" @click.prevent="submit()" class="btn btn-primary">Convert</button>
+                  <!-- <p>Value: {{ value }} || Angle: {{ angle }}&#176; || isSubmitted: {{ sub }}</p> -->
+                  <br/>
+                  <h3 v-if="sub" id="ans">{{ real }} {{ img }}</h3>
+                </div>
+
+            </form>
+
+            <hr>
+
+            <h2>j-operator to Symbolic</h2>
+            <br>
+            <form>
+                <div class="form-group" id="conv2">
+                  <input v-model="real" type="number" class="form-control" placeholder="Real">
+
+                  &nbsp; &nbsp; &nbsp;
+
+                  <strong id="j"> + j</strong>
+                  <input v-model="img" type="number" class="form-control" placeholder="Img">
+
+                  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+
+                  <button type="submit" @click.prevent="submit()" class="btn btn-primary">Convert</button>
+                  <!-- <p>Real: {{ real }} || Imaginary: {{ img }} || isSubmitted: {{ sub }}</p> -->
+                  <br/>
+                  <h3 v-if="sub" id="ans">{{ value }}, {{ angle }}&#176;</h3>
+                </div>
+                <hr>
+                
+            </form>
+        </div>
+        <hr>
+
+        <nav class="nav justify-content-center"><strong> &lt;/></strong>&nbsp; with&nbsp;
+            <img src="heart.jpg" width="15px" height="15px" alt="heart" srcset="">
+            &nbsp;by &nbsp;<i><a href="https://github.com/mujtaba-basheer">Mujtaba Basheer</a></i>
+        </nav>
+    </body>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="index.js"></script>
+</html>
+
