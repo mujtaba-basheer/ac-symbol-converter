@@ -4,10 +4,16 @@ var app1 = new Vue({
         angle: 0,
         value: 0,
         sub: false,
+        txt: 'Convert'
     },
     methods: {
         submit: function() {
-            this.sub = true;
+            this.sub = !this.sub;
+            if (!this.sub) {
+                this.angle = 0
+                this.value = 0
+            }
+            this.txt = this.sub ? 'Clear' : 'Convert'
             //console.log(this.value, Math.sin(this.angle / 180 * Math.PI));
             // this.angle = 0;
             // this.value = 0;
@@ -15,7 +21,7 @@ var app1 = new Vue({
     },
     computed: {
         real: function() {
-            return this.value * Math.cos(this.angle / 180 * Math.PI).toFixed(3)
+            return (this.value * Math.cos(this.angle / 180 * Math.PI)).toFixed(3);
         },
         img: function() {
             var pre = ''
@@ -37,12 +43,16 @@ var app1 = new Vue({
         real: 0,
         img: 0,
         sub: false,
+        txt: 'Convert'
     },
     methods: {
         submit: function() {
-            this.sub = true;
-            // this.real = 0;
-            // this.img = 0;
+            this.sub = !this.sub;
+            if (!this.sub) {
+                this.real = 0
+                this.img = 0
+            }
+            this.txt = this.sub ? 'Clear' : 'Convert'
             console.log(Math.atan(this.img / this.real) * 180 / Math.PI)
         }
     },

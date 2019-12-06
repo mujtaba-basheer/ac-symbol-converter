@@ -23,7 +23,7 @@
 
                   &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
 
-                  <button type="submit" @click.prevent="submit()" class="btn btn-primary">Convert</button>
+                  <button type="submit" @click.prevent="submit()" class="btn btn-primary">{{ txt }}</button>
                   <!-- <p>Value: {{ value }} || Angle: {{ angle }}&#176; || isSubmitted: {{ sub }}</p> -->
                   <br/>
                   <h3 v-if="sub" id="ans">{{ real }} {{ img }}</h3>
@@ -46,7 +46,7 @@
 
                   &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
 
-                  <button type="submit" @click.prevent="submit()" class="btn btn-primary">Convert</button>
+                  <button type="submit" @click.prevent="submit()" class="btn btn-primary">{{ txt }}</button>
                   <!-- <p>Real: {{ real }} || Imaginary: {{ img }} || isSubmitted: {{ sub }}</p> -->
                   <br/>
                   <h3 v-if="sub" id="ans">{{ value }}, {{ angle }}&#176;</h3>
