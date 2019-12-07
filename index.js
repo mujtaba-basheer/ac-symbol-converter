@@ -1,30 +1,34 @@
+
+// Polar to Rectangular Coverter
+
 var app1 = new Vue({
     el: '#conv1',
     data: {
         angle: 0,
         value: 0,
-        sub: false,
-        txt: 'Convert'
+        sub: false,         // true-->'Convert' has been clicked, false--> Either 'Clear' or no button has been clicked
+        txt: 'Convert'      // Button text
     },
     methods: {
-        submit: function() {
+        submit: function() {press
             this.sub = !this.sub;
-            if (!this.sub) {
+            if (!this.sub) {        // When 'Clear' button has been pressed
+                //  Restores to default values
                 this.angle = 0
                 this.value = 0
             }
-            this.txt = this.sub ? 'Clear' : 'Convert'
-            //console.log(this.value, Math.sin(this.angle / 180 * Math.PI));
-            // this.angle = 0;
-            // this.value = 0;
+            this.txt = this.sub ? 'Clear' : 'Convert'       // Toggles button text
         }
     },
     computed: {
         real: function() {
+            // Computes and returns the real part
             return (this.value * Math.cos(this.angle / 180 * Math.PI)).toFixed(3);
         },
         img: function() {
-            var pre = ''
+            // pre variable for better display of img part
+            // the '+'/'-' should come before the j-operator
+            var pre = ''        
             if (this.angle != 0) {
                 if ((this.value * Math.sin(this.angle / 180 * Math.PI)) < 0) {
                     pre = '- '
@@ -32,6 +36,7 @@ var app1 = new Vue({
                     pre = '+ '
                 }
             }
+            // Computes and returns the img part
             return `${pre}j(${Math.abs(this.value * Math.sin(this.angle / 180 * Math.PI)).toFixed(3)})`
         }
     }
@@ -53,7 +58,6 @@ var app1 = new Vue({
                 this.img = 0
             }
             this.txt = this.sub ? 'Clear' : 'Convert'
-            console.log(Math.atan(this.img / this.real) * 180 / Math.PI)
         }
     },
     computed: {

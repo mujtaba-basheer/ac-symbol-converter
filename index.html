@@ -7,9 +7,9 @@
 
     <body>
         <div class="container-fluid">
-            <h1>Form Converter</h1>
+            <h1>Polar &#8801; Rectangular Converter</h1>
             <hr>
-            <h2>Symbolic to j-operator</h2>
+            <h2>Polar to Rectangular</h2>
             <br>
             <form>
                 <div class="form-group" id="conv1">
@@ -25,7 +25,7 @@
 
                   <button type="submit" @click.prevent="submit()" class="btn btn-primary">{{ txt }}</button>
                   <!-- <p>Value: {{ value }} || Angle: {{ angle }}&#176; || isSubmitted: {{ sub }}</p> -->
-                  <br/>
+                  <br/> <br>
                   <h3 v-if="sub" id="ans">{{ real }} {{ img }}</h3>
                 </div>
 
@@ -33,7 +33,7 @@
 
             <hr>
 
-            <h2>j-operator to Symbolic</h2>
+            <h2>Rectangular to Polar</h2>
             <br>
             <form>
                 <div class="form-group" id="conv2">
@@ -48,8 +48,8 @@
 
                   <button type="submit" @click.prevent="submit()" class="btn btn-primary">{{ txt }}</button>
                   <!-- <p>Real: {{ real }} || Imaginary: {{ img }} || isSubmitted: {{ sub }}</p> -->
-                  <br/>
-                  <h3 v-if="sub" id="ans">{{ value }}, {{ angle }}&#176;</h3>
+                  <br/> <br>
+                  <h3 v-if="sub" id="ans">{{ value }}, &#8736;{{ angle }}&#176;</h3>
                 </div>
                 <hr>
                 
@@ -57,8 +57,7 @@
         </div>
         <hr>
 
-        <nav class="nav justify-content-center"><strong> &lt;/></strong>&nbsp; with&nbsp;
-            <img src="heart.jpg" width="15px" height="15px" alt="heart" srcset="">
+        <nav class="nav justify-content-center"><strong> &lt;/></strong>&nbsp; with&nbsp; &#10084;
             &nbsp;by &nbsp;<i><a href="https://github.com/mujtaba-basheer">Mujtaba Basheer</a></i>
         </nav>
     </body>
