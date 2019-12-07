@@ -10,7 +10,7 @@ var app1 = new Vue({
         txt: 'Convert'      // Button text
     },
     methods: {
-        submit: function() {press
+        submit: function() {
             this.sub = !this.sub;
             if (!this.sub) {        // When 'Clear' button has been pressed
                 //  Restores to default values
